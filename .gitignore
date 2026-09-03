@@ -220,3 +220,4 @@ __marimo__/
 data/*.csv
 # Generated DuckDB database
 data/*.duckdb
+.env
