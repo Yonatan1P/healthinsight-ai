@@ -25,6 +25,7 @@ def random_date(start_date: date, end_date: date) -> date:
 def generate_encounters(
     num_encounters: int,
     patient_ids: list[int],
+    provider_ids: list[int],
 ) -> pd.DataFrame:
     """Generate synthetic healthcare encounters."""
 
@@ -32,6 +33,7 @@ def generate_encounters(
 
     for encounter_id in range(1, num_encounters + 1):
         patient_id = random.choice(patient_ids)
+        provider_id = random.choice(provider_ids)
         encounter_type = random.choice(ENCOUNTER_TYPES)
 
         encounter_date = random_date(
@@ -39,7 +41,6 @@ def generate_encounters(
             date(2025, 12, 31),
         )
 
-        # Most encounters do not require an inpatient admission.
         if encounter_type == "Inpatient":
             admission_date = encounter_date
 
@@ -80,6 +81,7 @@ def generate_encounters(
             {
                 "encounter_id": encounter_id,
                 "patient_id": patient_id,
+                "provider_id": provider_id,
                 "encounter_date": encounter_date,
                 "encounter_type": encounter_type,
                 "admission_date": admission_date,
@@ -95,10 +97,12 @@ def generate_encounters(
 
 if __name__ == "__main__":
     patients_df = pd.read_csv("data/patients.csv")
+    providers_df = pd.read_csv("data/providers.csv")
 
     encounters_df = generate_encounters(
         NUM_ENCOUNTERS,
         patients_df["patient_id"].tolist(),
+        providers_df["provider_id"].tolist(),
     )
 
     output_path = "data/encounters.csv"
