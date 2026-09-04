@@ -23,4 +23,9 @@ def ask(question: str):
     print("\nExplanation:")
     print(explanation)
 
-    return results
+    return {
+        "question": question,
+        "sql": sql,
+        "results": results,
+        "explanation": explanation,
+    }
