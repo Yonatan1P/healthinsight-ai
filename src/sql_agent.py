@@ -3,7 +3,7 @@ import sys
 
 from dotenv import load_dotenv
 from openai import OpenAI
-from agent_context import build_schema_context
+from src.agent_context import build_schema_context
 
 # Load variables from the .env file
 load_dotenv()

@@ -1,4 +1,4 @@
-from schema import get_relationships, get_schema
+from src.schema import get_relationships, get_schema
 
 
 def build_schema_context() -> str:
