@@ -221,3 +221,4 @@ data/*.csv
 # Generated DuckDB database
 data/*.duckdb
 .env
+assets/
