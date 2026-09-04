@@ -10,6 +10,28 @@ The application interprets the user's question, determines the appropriate analy
 
 ---
 
+## 📸 Demo
+
+### Provider Performance Dashboard
+
+![Provider Analysis Dashboard](screenshots/provider-dashboard.png)
+
+HealthInsight AI can turn a multi-dimensional healthcare question into an interactive dashboard with KPIs, trends, readmission analysis, encounter mix, provider comparisons, and filters.
+
+### Simple Natural-Language Analysis
+
+![Simple Analysis](screenshots/simple-analysis.png)
+
+Simple questions can be translated into SQL, executed against the healthcare dataset, and returned with a concise natural-language explanation.
+
+### Interactive Filtering
+
+![Interactive Filtering](screenshots/filtered-dashboard.png)
+
+Dashboard filters allow the analysis to be explored across different years, providers, specialties, and encounter types.
+
+---
+
 ## ✨ Features
 
 ### Natural-Language Analytics
